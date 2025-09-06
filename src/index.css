@@ -4,9 +4,9 @@
   font-family: "Gwent";
   font-style: normal;
   font-weight: 400;
-  src: url("./fonts/hinted-GWENT-ExtraBold.ttf") format("truetype"),
-    url("./fonts/hinted-GWENT-ExtraBold.woff") format("woff"),
-    url("./fonts/hinted-GWENT-ExtraBold.woff2") format("woff2");
+  src: url("/fonts/hinted-GWENT-ExtraBold.ttf") format("truetype"),
+    url("/fonts/hinted-GWENT-ExtraBold.woff") format("woff"),
+    url("/fonts/hinted-GWENT-ExtraBold.woff2") format("woff2");
   font-display: swap;
 }
 
