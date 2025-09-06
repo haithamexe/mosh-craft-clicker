@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Gwent";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./fonts/hinted-GWENT-ExtraBold.ttf") format("truetype"),
+    url("./fonts/hinted-GWENT-ExtraBold.woff") format("woff"),
+    url("./fonts/hinted-GWENT-ExtraBold.woff2") format("woff2");
+  font-display: swap;
+}
+
+@theme {
+  /* Color utilities like bg-red-500, text-sky-300, and many more */
+  --color-pink-500: #ffccb7;
+  --color-red-500: #ff6b6b;
+  --color-yellow-500: #fcd792;
+  --color-olive-500: #828138;
+  --color-green-500: #3c5535;
+  --color-body: #f4e6ff;
+  --color-accent: black;
+  /* Font family utilities like font-sans */
+  --font-gwent: "Gwent", sans-serif;
+}
