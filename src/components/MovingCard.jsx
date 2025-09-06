@@ -18,6 +18,26 @@ const MovingCard = ({
   const [y, setY] = useState(document.clientY);
   const clickRef = useState(0);
 
+  const [paddings, setPaddings] = useState({
+    x: 0,
+    y: 0,
+  });
+
+  useEffect(() => {
+    const card = document.getElementById("moving-card");
+    const rect = card.getBoundingClientRect();
+    setPaddings({
+      x: rect.width / 2,
+      y: rect.height / 2,
+    });
+  }, []);
+
+  // adjust x/y to center of card
+  useEffect(() => {
+    setX((prev) => prev + paddings.x);
+    setY((prev) => prev + paddings.y);
+  }, [paddings]);
+
   // motion values for x/y
 
   // smooth skew
@@ -71,16 +91,17 @@ const MovingCard = ({
       onMouseMove={handleMove}
       style={{
         position: following ? "fixed" : "relative",
-        left: following ? x : "auto",
-        top: following ? y : "auto",
+        left: following ? x - paddings.x : "auto",
+        top: following ? y - paddings.y : "auto",
         skewX: following ? skewX : 0,
         skewY: following ? skewY : 0,
         cursor: "pointer",
         zIndex: following ? 50 : 10,
-        scale: following ? 2 : 1,
+        scale: following ? 1.6 : 1,
         transform: "translate(-50%, -50%)", // keeps centered
       }}
       className="w-60 rounded-md relative cursor-pointer z-10 "
+      id="moving-card"
     >
       {/* Power value */}
 
